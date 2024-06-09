@@ -3,29 +3,29 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return 'Pantalla principal';
+    return view('home');
 });
 
 Route::get('/login', function () {
-    return 'Login usuario';
+    return view('auth/login');
 });
 
 Route::get('/logout', function () {
-    return 'Logout usuario';
+    return view('auth/login');
 });
 
 Route::get('/category', function () {
-    return 'Listado de categorías';
+    return view('category/index');
 });
 
 Route::get('/category/show/{id}', function ($id) {
-    return "Vista detalle del post $id";
+    return view('category/show', ['id' => $id]);
 });
 
 Route::get('/category/create', function () {
-    return 'Añadir post';
+    return view('category/create');
 });
 
 Route::get('/category/edit/{id}', function ($id) {
-    return "Modificar post $id";
+    return view('category/edit', ['id' => $id]);
 });

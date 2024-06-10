@@ -22,6 +22,7 @@ class CategoryController extends Controller
     }
 
     public function getEdit($id){
-        return view('category/edit',["id"=>$id]);
+        $category = Category::findOrFail($id);
+        return view('category/edit', compact('category'));
     }
 }

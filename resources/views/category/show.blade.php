@@ -12,4 +12,10 @@
         <p class="mt-1 truncate text-xs leading-5 text-gray-500">Creada en: {{$category->created_at}}</p>
     </div>
   </div>
+
+<a href="{{ url('/category/edit/' . $category->id) }}">
+    <button class="m-2 bg-yellow-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+        Editar
+    </button>
+</a>
 @endsection

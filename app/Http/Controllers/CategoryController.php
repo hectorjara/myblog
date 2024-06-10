@@ -13,7 +13,8 @@ class CategoryController extends Controller
     }
 
     public function getShow($id){
-        return view('category/show',["id"=>$id]);
+        $category = Category::findOrFail($id);
+        return view('category/show', compact('category'));
     }
 
     public function getCreate(){

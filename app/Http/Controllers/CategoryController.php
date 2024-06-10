@@ -24,7 +24,6 @@ class CategoryController extends Controller
     public function store(Request $request){
         $category = new Category();
         $category->nombre = $request->nombre;
-        //$category->habilitated = $request->habilitated;
         $category->habilitated = $request->has('habilitated') ? 1 : 0;
         $category->save();
         return redirect(url('/category'));

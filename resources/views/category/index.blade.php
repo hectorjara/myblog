@@ -3,6 +3,12 @@
 @section('content')
 <h1 class="p-2">Listado de categorías</h1>
 
+<a href="{{ url('/category/create') }}">
+    <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
+        Crear Nueva Categoria
+    </button>
+</a>
+
 <ul role="list" class="p-2 divide-y divide-gray-100">
     @foreach ($categories as $category)
     <li class="flex justify-between gap-x-6 py-3">

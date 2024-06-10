@@ -20,4 +20,6 @@ Route::get('/category/show/{id}', [CategoryController::class, 'getShow']);
 
 Route::get('/category/create', [CategoryController::class, 'getCreate']);
 
+Route::post('/category', [CategoryController::class, 'store']);
+
 Route::get('/category/edit/{id}', [CategoryController::class, 'getEdit']);

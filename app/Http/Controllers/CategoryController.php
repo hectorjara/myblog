@@ -33,4 +33,12 @@ class CategoryController extends Controller
         $category = Category::findOrFail($id);
         return view('category/edit', compact('category'));
     }
+
+    public function update(Request $request, $id){
+        $category = Category::find($id);
+        $category->nombre = $request->nombre;
+        $category->habilitated = $request->has('habilitated') ? 1 : 0;
+        $category->save();
+        return redirect(url('/category'));
+    }
 }

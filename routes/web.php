@@ -29,8 +29,14 @@ Route::put('/category/{category}', [CategoryController::class, 'update']);
 
 
 
-Route::get('/', [PostController::class, 'getIndex']);
+Route::get('/post', [PostController::class, 'getIndex']);
+
+Route::get('/post/show/{id}', [PostController::class, 'getShow']);
 
 Route::get('/post/create', [PostController::class, 'getCreate']);
 
 Route::post('/post', [PostController::class, 'store']);
+
+Route::get('/post/edit/{id}', [PostController::class, 'getEdit']);
+
+Route::put('/post/{post}', [PostController::class, 'update']);

@@ -13,6 +13,23 @@ class PostController extends Controller
         return view('post/index', compact('posts'));
     }
 
+    public function getShow($id){
+        $post = Post::findOrFail($id);
+        return view('post/show', compact('post'));
+    }
+
+    public function getEdit($id){
+        $post = Post::findOrFail($id);
+        return view('post/edit', compact('post'));
+    }
+
+    public function update(Request $request, $id){
+        $post = Post::find($id);
+        $post->title = $request->title;
+        $post->save();
+        return redirect(url('/post'));
+    }
+
     public function getCreate(){
         $categories = Category::all();
         return view('post/create', compact('categories'));

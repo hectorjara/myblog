@@ -1,36 +1,32 @@
 @extends('layouts.layout')
 
 @section('content')
-<h1 class="p-2">Listado de Post</h1>
+  <!-- Posts Section -->
+  <section class="w-full md:w-2/3 flex flex-col items-center px-3">
 
-<a href="{{ url('/post/create') }}">
-    <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
-        Crear Nuevo Post
-    </button>
-</a>
-
-<ul role="list" class="p-2 divide-y divide-gray-100">
     @foreach ($posts as $post)
-    <li class="flex justify-between gap-x-6 py-3">
-      <div class="flex min-w-0 gap-x-4">
-        <div class="min-w-0 flex-auto">
-            <a href="{{ url('/post/show/' . $post->id) }}">
-            <p class="text-sm font-semibold leading-6 text-gray-900">{{$post->title}}</p>
+      <article class="flex flex-col shadow my-4">
+          <!-- Article Image -->
+          <a href="#" class="hover:opacity-75">
+              <img src="https://source.unsplash.com/collection/1346951/1000x500?sig=1">
           </a>
-          <p class="mt-1 truncate text-xs leading-5 text-gray-500">
-            @if ($post->habilitated ==1)"Post habilitado"
-            @else  "Post NO habilitado"
-            @endif</p>
-
-          <p class="text-sm font-semibold leading-6 text-gray-900">Categoria: {{$post->category->nombre}}</p>
-          <p class="text-sm font-semibold leading-6 text-gray-900">Contenido: {{$post->content}}</p>
-          <p class="text-sm font-semibold leading-6 text-gray-900">Autor: {{$post->poster}}</p>
-
-        </div>
-      </div>
-    </li>
+          <div class="bg-white flex flex-col justify-start p-6">
+              <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">{{$post->category->nombre}}</a>
+              <a href="{{ url('/post/show/' . $post->id) }}" class="text-3xl font-bold hover:text-gray-700 pb-4">{{$post->title}}</a>
+              <a href="#" class="pb-6">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus quis porta dui. Ut eu iaculis massa. Sed ornare ligula lacus, quis iaculis dui porta volutpat. In sit amet posuere magna..</a>
+              <a href="{{ url('/post/show/' . $post->id) }}" class="uppercase text-gray-800 hover:text-black">Continuar Leyendo <i class="fas fa-arrow-right"></i></a>
+          </div>
+      </article>
     @endforeach
-  </ul>
+
+    <!-- Pagination -->
+    <div class="flex items-center py-8">
+        <a href="#" class="h-10 w-10 bg-blue-800 hover:bg-blue-600 font-semibold text-white text-sm flex items-center justify-center">1</a>
+        <a href="#" class="h-10 w-10 font-semibold text-gray-800 hover:bg-blue-600 hover:text-white text-sm flex items-center justify-center">2</a>
+        <a href="#" class="h-10 w-10 font-semibold text-gray-800 hover:text-gray-900 text-sm flex items-center justify-center ml-3">Next <i class="fas fa-arrow-right ml-2"></i></a>
+    </div>
+
+</section>
   
   
 @endsection

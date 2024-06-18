@@ -1,12 +1,10 @@
 @extends('layouts.layout')
 
 @section('content')
-<h1 class="p-2">Listado de categorías</h1>
+<section class="w-full md:w-2/3 flex flex-col items-start px-3">
 
-<a href="{{ url('/category/create') }}">
-    <button class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 rounded">
-        Crear Nueva Categoria
-    </button>
+<a href="{{ url('/category/create') }}" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
+  Crear Nueva Categoria
 </a>
 
 <ul role="list" class="p-2 divide-y divide-gray-100">
@@ -27,5 +25,5 @@
     @endforeach
   </ul>
   
-  
+</section>
 @endsection

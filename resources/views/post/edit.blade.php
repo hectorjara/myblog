@@ -45,10 +45,11 @@
         </label>
         <textarea placeholder="{{$post->content}}" name="content" class="bg-gray-200 border-2 border-gray-200 rounded  w-2/3  h-screen py-2 px-4 text-gray-700 focus:outline-none focus:bg-white focus:border-purple-500">{{$post->content}}</textarea>
       </div>
-
+      @auth
       <button type="submit" class="m-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
         Modificar
       </button>
+      @endauth
   </form>
 </section>
 @endsection

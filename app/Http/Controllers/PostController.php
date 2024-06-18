@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
@@ -27,6 +28,9 @@ class PostController extends Controller
     }
 
     public function getEdit($id){
+        if (Auth::guest()){
+            return redirect(url('login'));
+        }
         $post = Post::findOrFail($id);
         $categories = Category::all();
         return view('post/edit', compact('post', 'categories'));
@@ -45,6 +49,9 @@ class PostController extends Controller
     }
 
     public function getCreate(){
+        if (Auth::guest()){
+            return redirect(url('login'));
+        }
         $categories = Category::all();
         return view('post/create', compact('categories'));
     }

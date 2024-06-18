@@ -31,6 +31,8 @@ Route::put('/category/{category}', [CategoryController::class, 'update']);
 
 Route::get('/post', [PostController::class, 'getIndex']);
 
+Route::get('/post/category/{id}', [PostController::class, 'getIndexbyCategory']);
+
 Route::get('/post/show/{id}', [PostController::class, 'getShow']);
 
 Route::get('/post/create', [PostController::class, 'getCreate']);

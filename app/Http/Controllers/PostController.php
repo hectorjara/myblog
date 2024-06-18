@@ -13,6 +13,14 @@ class PostController extends Controller
         return view('post/index', compact('posts'));
     }
 
+    public function getIndexbyCategory($id){
+        $category = Category::findOrFail($id);
+        $posts = Post::where('category_id', $category->id)
+                    ->with('category')
+                    ->paginate(2);
+        return view('post/index', compact('posts'));
+    }
+
     public function getShow($id){
         $post = Post::findOrFail($id);
         return view('post/show', compact('post'));

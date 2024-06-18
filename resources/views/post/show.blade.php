@@ -20,6 +20,10 @@
     
     <!-- Agregar Previous y Next -->
 
+    <a href="{{ url('/post/edit/' . $post->id) }}" class="w-full bg-blue-800 text-white font-bold text-sm uppercase rounded hover:bg-blue-700 flex items-center justify-center px-2 py-3 mt-4">
+        Editar
+    </a>
+
     <div class="w-full flex flex-col text-center md:text-left md:flex-row shadow bg-white mt-10 mb-10 p-6">
         <!-- Agregar Avatar del Autor -->
         <div class="flex-1 flex flex-col justify-center md:justify-start">

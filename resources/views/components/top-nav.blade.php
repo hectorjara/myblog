@@ -10,8 +10,11 @@
             </nav>
 
             <div class="flex items-center text-lg no-underline text-white pr-6">
-                <a class="" href="#">
+                <a class="px-2" href="{{ url('login') }}">
                     <p class="">login</p>
+                </a>
+                <a class="" href="{{ url('register') }}">
+                    <p class="px-2">Registro</p>
                 </a>
             </div>
         </div>

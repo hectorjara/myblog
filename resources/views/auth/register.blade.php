@@ -45,7 +45,7 @@
             <label class="block text-gray-500 font-bold mb-1 pr-4">
                 Confirmar Password
             </label>
-            <input required type="password_confirmation" name="password_confirmation" class="bg-gray-200 border-2 border-gray-200 rounded w-500 py-2 px-4 text-gray-700 focus:outline-none focus:bg-white focus:border-purple-500">
+            <input required type="password" name="password_confirmation" class="bg-gray-200 border-2 border-gray-200 rounded w-500 py-2 px-4 text-gray-700 focus:outline-none focus:bg-white focus:border-purple-500">
         </div>
         @error('password_confirmation')
             <p class="text-xs text-red-500 font-semibold mt-1">{{ $message }}</p>

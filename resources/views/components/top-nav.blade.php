@@ -18,6 +18,13 @@
                     <p class="px-2">Registro</p>
                 </a>
                 @endguest
+
+                @auth
+                    <form method="POST" action="{{url('logout') }}">
+                    @csrf
+                    <button type="submit" >Log Out</button>
+                    </form>
+                @endauth
             </div>
         </div>
 

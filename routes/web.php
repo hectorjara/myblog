@@ -17,9 +17,8 @@ Route::get('/login', [SessionController::class, 'getCreate']);
 
 Route::post('/login', [SessionController::class, 'store']);
 
-Route::get('/logout', function () {
-    return view('auth/login');
-});
+Route::post('/logout', [SessionController::class, 'destroy']);
+
 
 Route::get('/category', [CategoryController::class, 'getIndex']);
 

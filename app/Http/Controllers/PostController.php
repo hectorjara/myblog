@@ -20,12 +20,18 @@ class PostController extends Controller
 
     public function getEdit($id){
         $post = Post::findOrFail($id);
-        return view('post/edit', compact('post'));
+        $categories = Category::all();
+        return view('post/edit', compact('post', 'categories'));
     }
 
     public function update(Request $request, $id){
         $post = Post::find($id);
         $post->title = $request->title;
+        $post->habilitated = $request->has('habilitated') ? 1 : 0;
+        $category = Category::find($request->category);
+        $post->category()->associate($category);
+        $post->poster = $request->poster;
+        $post->content = $request->content;
         $post->save();
         return redirect(url('/post'));
     }

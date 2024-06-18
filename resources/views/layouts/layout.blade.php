@@ -2,7 +2,7 @@
 <head>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-amber-400">
     <x-top-nav></x-top-nav>
     <x-text-header></x-text-header>
     <x-category-nav></x-category-nav>

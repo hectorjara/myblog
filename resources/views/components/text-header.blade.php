@@ -1,9 +1,9 @@
  <!-- Text Header -->
  <header class="w-full container mx-auto">
     <div class="flex flex-col items-center py-8">
-        <a class="font-bold text-gray-800 uppercase hover:text-gray-700 text-5xl" href="/">
+        <h1 class="font-bold text-amber-200 uppercase hover:text-gray-700 text-5xl">
             Informe Salud
-        </a>
+        </h1>
         <p class="text-lg text-gray-600">
             Un blog de alimentación saludable
         </p>

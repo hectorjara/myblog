@@ -9,7 +9,7 @@
             <a href="#" class="text-blue-700 text-sm font-bold uppercase pb-4">{{$post->category->nombre}}</a>
             <a href="#" class="text-3xl font-bold hover:text-gray-700 pb-4">{{$post->title}}</a>
             <p href="#" class="text-sm pb-8">
-                Por <a href="#" class="font-semibold hover:text-gray-800">{{$post->poster}}</a>, Published on April 25th, 2020
+                Por <a href="#" class="font-semibold hover:text-gray-800">{{$post->user->name}}</a>, Published on April 25th, 2020
             </p>
             <p>{{$post->content}}</p>
         </div>
@@ -25,7 +25,7 @@
     <div class="w-full flex flex-col text-center md:text-left md:flex-row shadow bg-white mt-10 mb-10 p-6">
         <!-- Agregar Avatar del Autor -->
         <div class="flex-1 flex flex-col justify-center md:justify-start">
-            <p class="font-semibold text-2xl">{{$post->poster}}</p>
+            <p class="font-semibold text-2xl">{{$post->user->name}}</p>
             <!-- Agregar Redes Sociales del Autor -->
         </div>
     </div>

@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\User;
 use App\Models\Post;
+use Illuminate\Foundation\Auth\User as AuthUser;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -42,7 +44,8 @@ class PostController extends Controller
         $post->habilitated = $request->has('habilitated') ? 1 : 0;
         $category = Category::find($request->category);
         $post->category()->associate($category);
-        $post->poster = $request->poster;
+        $user = User::find($request->user);
+        $post->user()->associate($user);
         $post->content = $request->content;
         $post->save();
         return redirect(url('/post'));
@@ -62,7 +65,8 @@ class PostController extends Controller
         $post->habilitated = $request->has('habilitated') ? 1 : 0;
         $category = Category::find($request->category);
         $post->category()->associate($category);
-        $post->poster = $request->poster;
+        $user = User::find($request->user);
+        $post->user()->associate($user);
         $post->content = $request->content;
         $post->save();
         return redirect(url('/post'));

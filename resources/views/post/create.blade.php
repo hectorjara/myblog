@@ -31,11 +31,8 @@
         </select>
       </div>
 
-      <div class="mt-4">
-        <label class="block text-gray-500 font-bold mb-1 pr-4">
-          Autor
-        </label>
-        <input type="text" name="poster" class="bg-gray-200 border-2 border-gray-200 rounded w-500 py-2 px-4 text-gray-700 focus:outline-none focus:bg-white focus:border-purple-500">
+      <div>
+        <input type="hidden" name="user" value={{Auth::user()->id}}>
       </div>
 
       <div class="mt-4">
